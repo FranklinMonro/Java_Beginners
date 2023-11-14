@@ -5,6 +5,7 @@
 package com.mycompany.helloworld;
 
 import java.awt.*;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -112,7 +113,71 @@ public class HelloWorld {
         incrementNumber++;
         int decrementNumber = 5;
         decrementNumber--;
+        int incrementNumberA = 1;
+        int incrementNumberB = incrementNumberA++;
+        int incrementNumberC = ++incrementNumberA;
         System.out.println("increment++: "  + incrementNumber);
         System.out.println("decrementNumber--: " + decrementNumber);
+        System.out.println("incrementNumberA: " + incrementNumberA);
+        System.out.println("incrementNumberB: " + incrementNumberB);
+        System.out.println("incrementNumberC: " + incrementNumberC);
+        
+        int augmentedA = 1;
+        augmentedA += 2;
+        int augmentedB = 7;
+        augmentedB -= 2;
+        int augmentedC = 5;
+        augmentedC *= 2;
+        int augmentedD = 16;
+        augmentedD /= 2;
+        System.out.println("augmentedA: " + augmentedA);
+        System.out.println("augmentedB: " + augmentedB);
+        System.out.println("augmentedC: " + augmentedC);
+        System.out.println("augmentedD: " + augmentedD);
+        
+        // Implicit casting
+        // byte -> short -> int -> long -> float -> double
+        short castA = 1;
+        int castB = castA + 2;
+        System.out.println("castA: " + castA);
+        System.out.println("castB: " + castB);
+        
+        // Explicit casting
+        double castC = 1.7;
+        int castD = (int)castC + 2;
+        String castE = "1";
+        int castF = Integer.parseInt(castE) + 3;
+        System.out.println("castD: " + castD);
+        System.out.println("castF: " + castF);
+        
+        int mathA = Math.round(1.1F);
+        double mathB = Math.ceil(1.1F);
+        int mathC = (int)Math.floor(1.1F);
+        int mathD = Math.max(1, 2);
+        double mathE = Math.random();
+        double mathF = Math.random() * 100;
+        double mathG = Math.round(mathF);
+        int mathH = (int)mathG;
+        int mathI = (int)(Math.random() * 100);
+        System.out.println("mathA, round: " + mathA);
+        System.out.println("mathB, ceiling: " + mathB);
+        System.out.println("mathC, floor: " + mathC);
+        System.out.println("mathD, max: " + mathD);
+        System.out.println("mathE, random: " + mathE);
+        System.out.println("mathF, random * 100: " + mathF);
+        System.out.println("mathG, round -> random * 100: " + mathG);
+        System.out.println("mathH, int casting -> round -> random * 100: " + mathH);
+        System.out.println("mathI, int casting -> random * 100: " + mathI);
+        
+        NumberFormat currencyA = NumberFormat.getCurrencyInstance();
+        String currencyFormatA = currencyA.format(10234.891);
+        NumberFormat percentageA = NumberFormat.getPercentInstance();
+        String percentageFormatA = percentageA.format(87.1);
+        String methodChainingA = NumberFormat.getCurrencyInstance().format(25.10);
+        System.out.println("currencyA: " + currencyA);
+        System.out.println("currencyFormatA: " + currencyFormatA);
+        System.out.println("percentageA: " + percentageA);
+        System.out.println("percentageFormatA: " + percentageFormatA);
+        System.out.println("methodChainingA: " + methodChainingA);
     }
 }
