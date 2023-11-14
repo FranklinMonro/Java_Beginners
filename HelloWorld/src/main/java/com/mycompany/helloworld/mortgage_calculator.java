@@ -4,6 +4,7 @@
  */
 package com.mycompany.helloworld;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -25,7 +26,16 @@ public class mortgage_calculator {
         float monthlyIntrest = annualIntrestRate / PERCENT / MONTHS_IN_YEAR;
                 
         System.out.print("Period (Years):: ");
-        double period = scanner.nextDouble();
+        byte period = scanner.nextByte();
+        int numberOfPayments = period * MONTHS_IN_YEAR;
+        
+        double mortgage = principal 
+                * (monthlyIntrest * Math.pow(1 + monthlyIntrest , numberOfPayments))
+                / (Math.pow(1 + monthlyIntrest, numberOfPayments));
+        
+        NumberFormat mortageFormatted = NumberFormat.getCurrencyInstance();
+        String mortageFormat = mortageFormatted.format(mortgage);
+        System.out.println("Mortgage: " + mortageFormat);
     }
     
 }
