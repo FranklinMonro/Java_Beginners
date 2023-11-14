@@ -8,6 +8,7 @@ import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -179,5 +180,16 @@ public class HelloWorld {
         System.out.println("percentageA: " + percentageA);
         System.out.println("percentageFormatA: " + percentageFormatA);
         System.out.println("methodChainingA: " + methodChainingA);
+        
+        Scanner scannerA = new Scanner(System.in);
+        System.out.print("What is your age: ");
+        byte ageScanner = scannerA.nextByte();
+        System.out.println("You are: " + ageScanner);
+        System.out.print("What is your name: ");
+        String nameScanner = scannerA.next();
+        System.out.println("Your name is: " + nameScanner);
+        System.out.print("What is your name and surname: "); // Comment out above input to work
+        String nameScannerB = scannerA.nextLine().trim();
+        System.out.println("Your name and surname is: " + nameScannerB);
     }
 }
